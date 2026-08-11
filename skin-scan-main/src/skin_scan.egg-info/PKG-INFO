@@ -1,0 +1,26 @@
+Metadata-Version: 2.4
+Name: skin-scan
+Version: 0.1.0
+Summary: Production-grade skin analysis OSS starter
+Requires-Python: >=3.11
+License-File: LICENSE
+Requires-Dist: fastapi>=0.104.0
+Requires-Dist: uvicorn[standard]>=0.24.0
+Requires-Dist: python-multipart>=0.0.6
+Requires-Dist: opencv-python-headless>=4.8.0
+Requires-Dist: numpy>=1.24.0
+Requires-Dist: mediapipe>=0.10.0
+Requires-Dist: scikit-image>=0.21.0
+Requires-Dist: pillow>=10.0.0
+Requires-Dist: pydantic>=2.4.0
+Requires-Dist: pydantic-settings>=2.0.0
+Requires-Dist: python-dotenv>=1.0.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.4.0; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.21.0; extra == "dev"
+Requires-Dist: ruff>=0.1.0; extra == "dev"
+Requires-Dist: pyright>=1.1.0; extra == "dev"
+Provides-Extra: ml
+Requires-Dist: torch>=2.0.0; extra == "ml"
+Requires-Dist: torchvision>=0.15.0; extra == "ml"
+Dynamic: license-file

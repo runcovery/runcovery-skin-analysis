@@ -1,0 +1,42 @@
+[project]
+name = "skin-scan"
+version = "0.1.0"
+description = "Production-grade skin analysis OSS starter"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.104.0",
+    "uvicorn[standard]>=0.24.0",
+    "python-multipart>=0.0.6",
+    "opencv-python-headless>=4.8.0",
+    "numpy>=1.24.0",
+    "mediapipe>=0.10.0",
+    "scikit-image>=0.21.0",
+    "pillow>=10.0.0",
+    "pydantic>=2.4.0",
+    "pydantic-settings>=2.0.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "ruff>=0.1.0",
+    "pyright>=1.1.0",
+]
+ml = [
+    "torch>=2.0.0",
+    "torchvision>=0.15.0",
+]
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.pyright]
+typeCheckingMode = "basic"
+pythonVersion = "3.11"
