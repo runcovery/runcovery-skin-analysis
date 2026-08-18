@@ -244,67 +244,6 @@ Postman에서는 `Body` → `form-data`를 선택하고 키 이름을 `image`, �
 | `overlays` | 항목별 base64 PNG 히트맵 |
 | `regions` | 분석에 사용된 얼굴 영역 이름 |
 
-## 로컬 실행
-
-### 요구사항
-
-- Python 3.12 권장
-- `uv`
-
-MediaPipe 0.10.21은 Python 3.14용 Windows wheel을 제공하지 않으므로 Python 3.12를 사용합니다.
-
-### 설치
-
-```bash
-git clone https://github.com/runcovery/runcovery-skin-analysis.git
-cd runcovery-skin-analysis
-
-uv python install 3.12
-uv venv --python 3.12 --clear
-uv sync --extra dev
-```
-
-### 서버 실행
-
-```bash
-uv run --python 3.12 uvicorn src.app.main:app --reload --port 8000
-```
-
-실행 후:
-
-- Web UI: http://localhost:8000
-- Swagger API 문서: http://localhost:8000/docs
-- Health check: http://localhost:8000/health
-
-### curl 테스트
-
-Windows PowerShell:
-
-```powershell
-curl.exe -X POST http://localhost:8000/scan -F "image=@C:\path\to\face.jpg"
-```
-
-macOS/Linux:
-
-```bash
-curl -X POST http://localhost:8000/scan \
-  -F "image=@/path/to/face.jpg"
-```
-
-### CLI 테스트
-
-```powershell
-uv run --python 3.12 python -m src.cli.scan_image `
-  --input "C:\path\to\face.jpg" `
-  --out results `
-  --save-overlays
-```
-
-### 자동 테스트
-
-```bash
-uv run --python 3.12 pytest -q
-```
 
 ## 권장 촬영 조건
 
